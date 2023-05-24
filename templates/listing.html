@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="mx-auto" style="max-width: 900px;">
+    <div class="header-bar">
+        <a href="{% url 'index' %}">&#8592; Back</a>
+    </div>
+
+    <div class="card-body px-3 py-2 bg-white rounded-sm">
+        <h3 class=" text-3xl text-gray-900">{{ listing.title }}</h3>
+        <p class="text-gray-900">${{ listing.price }}</p>
+        <p class="text-gray-600 text-sm">{{ listing.address }}</p>
+        {% for image in images %}
+        <img class="mw-100 mh-100" src="{{ image.image.url }}" alt="">
+        {% endfor %}
+
+
+        {% if request.user.is_staff %}
+        <div class="mt-1 py-3 border-t border-gray-200">
+            <a href="{% url 'listing_update' listing.id %}" class="button text-blue-500">
+                Edit
+            </a>
+            <a href="{% url 'listing_delete' listing.id %}" class="button ms-2 text-blue-500">
+                Delete
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width: 950px;" class="mx-auto">
+
+    <div class="py-3 border-t border-gray-200">
+        <a href="{% url 'listing_create' %}" class="btn btn-outline-secondary">Create a New Listing</a>
+        <a href="{% url 'logout' %}" class="btn btn-outline-danger float-end">Logout</a>
+    </div>
+    <div>
+
+    </div>
+
+    {% for listing in listings %}
+
+    <div class="listing" style="padding-bottom: 20px;">
+        <div class="header-bar">
+            <h3 class="">{{ listing.title }}</h3>
+        </div>
+        <div class="card-body mt-2 px-3 py-2 bg-gray-100">
+            <img class="mw-100 mh-100" src="{{ listing.images.all.0.image.url }}" alt="">
+            <a href="{% url 'listing_retrieve' listing.id %}" class="button">
+                View details
+            </a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+
+{% endblock content %}

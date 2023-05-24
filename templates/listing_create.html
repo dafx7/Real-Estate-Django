@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="mx-auto" style="max-width: 660px;">
+    <div class="header-bar">
+        <a href="{% url 'index' %}">&#8592; Back</a>
+    </div>
+
+    <div class="card-body">
+        <h1 style="font-size: x-large;">Create a new listing</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p>Images:</p>
+            <input type="file" name="images" multiple>
+
+            <div style="padding-top: 10px;"><button class="button" type="submit">Submit</button></div>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
