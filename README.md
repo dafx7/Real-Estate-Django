@@ -6,7 +6,7 @@ Welcome to the Real Estate Listings Web Application! This Django-based web app a
 
 - Create, update, and delete real estate listings.
 - Associate multiple images with each listing for a comprehensive view.
-- Search functionality based on location, price range, property type, and more.
+<!-- - Search functionality based on location, price range, property type, and more. -->
 - User authentication for secure access to certain features.
 - Responsive design for optimal viewing on different devices.
 
@@ -47,7 +47,7 @@ Once the Real Estate Listings Web Application is running:
 
 - Browse listings on the home page.
 - Click on a listing for details and associated images.
-- Use the search functionality to find listings based on criteria.
+<!-- - Use the search functionality to find listings based on criteria. -->
 - Create an account or log in to access additional features.
 
 Please note that the provided data is fictitious and for demonstration purposes only.
