@@ -58,7 +58,6 @@ Please note that the provided data is fictitious and for demonstration purposes 
 - Python
 - HTML
 - CSS
-- JavaScript
 - PostgreSQL (Relational Database)
 - Bootstrap (Front-end Framework)
 
