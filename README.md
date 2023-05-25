@@ -16,11 +16,11 @@ To set up the Real Estate Listings Web Application locally:
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/real-estate-listings.git
+git clone https://github.com/dafx7/Real-Estate-Django.git
 ```
 2. Navigate to the project directory:
 ```
-cd real-estate-listings
+cd Real-Estate-Django
 ```
 3. Create and activate a virtual environment (optional):
 ```
