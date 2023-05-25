@@ -11,12 +11,12 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Listing, ListingImage
 from .forms import ListingForm
+from .filters import ListingFilter
 
 # Create your views here.
 
+
 # Login View
-
-
 class CustomLoginView(LoginView):
     template_name = 'login.html'
     fields = '__all__'
@@ -47,11 +47,16 @@ class RegisterPage(FormView):
 
 # CRUDL - create, retrieve, update, delete, list
 
-@login_required
+@login_required(login_url='/login')
 def listing_list(request):
     listings = Listing.objects.all()
+
+    myFilter = ListingFilter(request.GET, queryset=listings)
+    listings = myFilter.qs
+
     context = {
-        "listings": listings
+        "listings": listings,
+        'myFilter': myFilter,
     }
     return render(request, "listings.html", context)
 
